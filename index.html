@@ -51,13 +51,13 @@
 }
 
 .profile-pic {
-    width: 500px; /* Doubled width (2x) */
-    height: 300px; /* Doubled height (2x) */
+    width: 550px; /* Slightly increased width */
+    height: 300px; /* Maintained height */
     position: relative;
     overflow: hidden;
-    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%); /* Unique polygon shape */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexagon shape */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
-    transition: transform 0.3s ease-in-out;
+    transition: clip-path 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .profile-pic img {
@@ -67,9 +67,28 @@
     transition: transform 0.3s ease-in-out;
 }
 
+/* Hover effect to change shape drastically */
 .profile-pic:hover {
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%); /* Heptagon shape */
     transform: scale(1.05); /* Slight zoom on hover */
 }
+
+/* Optional: Add animation for continuous shape change */
+@keyframes shapeShift {
+    0% {
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexagon */
+    }
+    50% {
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%); /* Heptagon */
+    }
+    100% {
+        clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 90% 70%, 50% 100%, 10% 70%, 0% 35%); /* Octagon-like */
+    }
+}
+
+.profile-pic.animated {
+    animation: shapeShift 5s infinite alternate ease-in-out;
+                           }
         /* Sections */
         section {
             padding: 40px 50px;
