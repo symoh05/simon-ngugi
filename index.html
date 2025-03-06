@@ -51,20 +51,15 @@
 }
 
 .profile-pic {
-    width: 300px; /* Adjusted for a more compact hexagon */
-    height: 300px;
+    width: 500px; /* Doubled width (2x) */
+    height: 300px; /* Doubled height (2x) */
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #003366, #00ccff); /* Digital blue gradient */
-    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="white"/></svg>'); /* Hexagon mask */
-    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="white"/></svg>'); /* Hexagon mask */
-    mask-size: cover;
-    mask-position: center;
-    box-shadow: 0 0 15px rgba(0, 204, 255, 0.6); /* Glowing tech effect */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%); /* Unique polygon shape */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Image inside hexagon */
 .profile-pic img {
     width: 100%;
     height: 100%;
@@ -72,27 +67,8 @@
     transition: transform 0.3s ease-in-out;
 }
 
-/* Hover effect */
 .profile-pic:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(0, 204, 255, 0.9);
-}
-
-/* Optional: Add pulsing glow effect */
-@keyframes glowPulse {
-    0% {
-        box-shadow: 0 0 15px rgba(0, 204, 255, 0.6);
-    }
-    50% {
-        box-shadow: 0 0 25px rgba(0, 204, 255, 1);
-    }
-    100% {
-        box-shadow: 0 0 15px rgba(0, 204, 255, 0.6);
-    }
-}
-
-.profile-pic.animated {
-    animation: glowPulse 3s infinite alternate ease-in-out;
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
         /* Sections */
