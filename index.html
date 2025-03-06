@@ -52,18 +52,20 @@
 }
 
 .profile-pic {
-    width: 550px; /* Slightly increased width */
-    height: 300px; /* Maintained height */
+    width: 300px; /* Adjusted for a more compact hexagon */
+    height: 300px;
     position: relative;
     overflow: hidden;
-    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C100,50 200,0 300,50 C400,100 500,50 500,150 C500,250 400,300 300,250 C200,200 100,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Smooth organic shape */
-    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C100,50 200,0 300,50 C400,100 500,50 500,150 C500,250 400,300 300,250 C200,200 100,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Smooth organic shape */
+    background: linear-gradient(135deg, #003366, #00ccff); /* Digital blue gradient */
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="white"/></svg>'); /* Hexagon mask */
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="white"/></svg>'); /* Hexagon mask */
     mask-size: cover;
     mask-position: center;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
-    transition: -webkit-mask-image 0.8s ease-in-out, mask-image 0.8s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.6); /* Glowing tech effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* Image inside hexagon */
 .profile-pic img {
     width: 100%;
     height: 100%;
@@ -71,39 +73,27 @@
     transition: transform 0.3s ease-in-out;
 }
 
-/* Hover effect to change shape drastically */
+/* Hover effect */
 .profile-pic:hover {
-    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C150,50 250,0 350,50 C450,100 500,50 500,150 C500,250 450,300 350,250 C250,200 150,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Alternate smooth organic shape */
-    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C150,50 250,0 350,50 C450,100 500,50 500,150 C500,250 450,300 350,250 C250,200 150,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Alternate smooth organic shape */
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 204, 255, 0.9);
 }
 
-/* Optional: Add animation for continuous shape change */
-@keyframes shapeShift {
+/* Optional: Add pulsing glow effect */
+@keyframes glowPulse {
     0% {
-        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C100,50 200,0 300,50 C400,100 500,50 500,150 C500,250 400,300 300,250 C200,200 100,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Shape 1 */
-        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C100,50 200,0 300,50 C400,100 500,50 500,150 C500,250 400,300 300,250 C200,200 100,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Shape 1 */
-    }
-    25% {
-        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C150,50 250,0 350,50 C450,100 500,50 500,150 C500,250 450,300 350,250 C250,200 150,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Shape 2 */
-        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C150,50 250,0 350,50 C450,100 500,50 500,150 C500,250 450,300 350,250 C250,200 150,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Shape 2 */
+        box-shadow: 0 0 15px rgba(0, 204, 255, 0.6);
     }
     50% {
-        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C100,50 200,0 300,50 C400,100 500,50 500,150 C500,250 400,300 300,250 C200,200 100,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Shape 3 */
-        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C100,50 200,0 300,50 C400,100 500,50 500,150 C500,250 400,300 300,250 C200,200 100,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Shape 3 */
-    }
-    75% {
-        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C150,50 250,0 350,50 C450,100 500,50 500,150 C500,250 450,300 350,250 C250,200 150,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Shape 4 */
-        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C150,50 250,0 350,50 C450,100 500,50 500,150 C500,250 450,300 350,250 C250,200 150,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Shape 4 */
+        box-shadow: 0 0 25px rgba(0, 204, 255, 1);
     }
     100% {
-        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C100,50 200,0 300,50 C400,100 500,50 500,150 C500,250 400,300 300,250 C200,200 100,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Shape 5 */
-        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 300"><path d="M50,0 C100,50 200,0 300,50 C400,100 500,50 500,150 C500,250 400,300 300,250 C200,200 100,250 50,200 C0,150 0,50 50,0 Z" fill="white"/></svg>'); /* Shape 5 */
+        box-shadow: 0 0 15px rgba(0, 204, 255, 0.6);
     }
 }
 
 .profile-pic.animated {
-    animation: shapeShift 8s infinite alternate ease-in-out;
+    animation: glowPulse 3s infinite alternate ease-in-out;
 }
         /* Sections */
         section {
